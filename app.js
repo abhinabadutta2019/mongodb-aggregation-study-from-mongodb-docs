@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const inventoryRoutes = require("./routes/inventoryRoutes");
+const classesRoutes = require("./routes/classesRoutes");
+const memberRoutes = require("./routes/memberRoutes");
 const dotenv = require("dotenv");
 
 const app = express();
@@ -26,3 +28,7 @@ app.use("/", userRoutes);
 app.use("/order", orderRoutes);
 //inventoryRoutes
 app.use("/inventory", inventoryRoutes);
+//classesRoutes
+app.use("/classes", classesRoutes);
+//memberRoutes
+app.use("/member", memberRoutes);
