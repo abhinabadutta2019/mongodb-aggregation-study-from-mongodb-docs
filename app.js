@@ -5,6 +5,9 @@ const orderRoutes = require("./routes/orderRoutes");
 const inventoryRoutes = require("./routes/inventoryRoutes");
 const classesRoutes = require("./routes/classesRoutes");
 const memberRoutes = require("./routes/memberRoutes");
+const itemRoutes = require("./routes/itemRoutes");
+const warehouses = require("./routes/warehouses");
+
 const dotenv = require("dotenv");
 
 const app = express();
@@ -32,3 +35,7 @@ app.use("/inventory", inventoryRoutes);
 app.use("/classes", classesRoutes);
 //memberRoutes
 app.use("/member", memberRoutes);
+//itemRoutes
+app.use("/item", itemRoutes);
+//warehouses
+app.use("/warehouses", warehouses);
