@@ -1,0 +1,8 @@
+[
+  {
+    "_id": 1,
+    "student": "Ann Aardvark",
+    "sickdays": ["2018-05-01", "2018-08-23"]
+  },
+  { "_id": 2, "student": "Zoe Zebra", "sickdays": ["2018-02-01", "2018-05-23"] }
+]
