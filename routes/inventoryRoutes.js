@@ -17,7 +17,7 @@ router.post("/insert-all", async (req, res) => {
     res.send(error);
   }
 });
-
+//
 //get all data
 router.get("/all", async (req, res) => {
   try {
