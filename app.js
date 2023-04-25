@@ -8,6 +8,7 @@ const memberRoutes = require("./routes/memberRoutes");
 const itemRoutes = require("./routes/itemRoutes");
 const warehouses = require("./routes/warehouses");
 const absences = require("./routes/absences");
+const holidays = require("./routes/holidays");
 const dotenv = require("dotenv");
 
 const app = express();
@@ -39,5 +40,7 @@ app.use("/member", memberRoutes);
 app.use("/item", itemRoutes);
 //warehouses
 app.use("/warehouses", warehouses);
-//
+//absences
 app.use("/absences", absences);
+//holidays
+app.use("/holidays", holidays);

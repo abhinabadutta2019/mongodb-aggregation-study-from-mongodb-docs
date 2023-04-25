@@ -46,4 +46,43 @@ router.post("/insert-all", async (req, res) => {
     res.send(error);
   }
 });
+
+//get all data
+router.get("/all", async (req, res) => {
+  try {
+    const collection = mongoose.connection.collection("absences");
+
+    let result = await collection.find({}).toArray();
+    res.send(result);
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+//
+router.get("/holidays", async (req, res) => {
+  try {
+    const collection = mongoose.connection.collection("absences");
+
+    let result = await collection
+      .aggregate([
+        {
+          $lookup: {
+            from: "holidays",
+            pipeline: [
+              { $match: { year: 2018 } },
+              { $project: { _id: 0, date: { name: "$name", date: "$date" } } },
+              { $replaceRoot: { newRoot: "$date" } },
+            ],
+            as: "holidays",
+          },
+        },
+      ])
+      .toArray();
+    res.send(result);
+  } catch (error) {
+    res.send(error);
+  }
+});
+
 module.exports = router;
