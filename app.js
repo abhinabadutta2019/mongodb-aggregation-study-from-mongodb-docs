@@ -9,6 +9,8 @@ const itemRoutes = require("./routes/itemRoutes");
 const warehouses = require("./routes/warehouses");
 const absences = require("./routes/absences");
 const holidays = require("./routes/holidays");
+const resturants = require("./routes/resturants");
+const orders3 = require("./routes/ordersRoutes3");
 const dotenv = require("dotenv");
 
 const app = express();
@@ -44,3 +46,8 @@ app.use("/warehouses", warehouses);
 app.use("/absences", absences);
 //holidays
 app.use("/holidays", holidays);
+//resturants
+app.use("/resturants", resturants);
+//orders3
+//no order 2 , as order 1 and order 2 routes in same file
+app.use("/orders3", orders3);
