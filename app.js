@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+//
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const inventoryRoutes = require("./routes/inventoryRoutes");
@@ -10,9 +12,9 @@ const warehouses = require("./routes/warehouses");
 const absences = require("./routes/absences");
 const holidays = require("./routes/holidays");
 const resturants = require("./routes/resturants");
+const orders2 = require("./routes/order2Routes");
 const orders3 = require("./routes/ordersRoutes3");
-const dotenv = require("dotenv");
-
+//
 const app = express();
 app.use(express.json());
 
@@ -29,6 +31,8 @@ app.listen(process.env.PORT, () => {
   console.log(`Server Started at ${process.env.PORT}`);
 });
 
+//
+
 app.use("/", userRoutes);
 //orderRoutes
 app.use("/order", orderRoutes);
@@ -37,9 +41,9 @@ app.use("/inventory", inventoryRoutes);
 //classesRoutes
 app.use("/classes", classesRoutes);
 //memberRoutes
-app.use("/member", memberRoutes);
+app.use("/members", memberRoutes);
 //itemRoutes
-app.use("/item", itemRoutes);
+app.use("/items", itemRoutes);
 //warehouses
 app.use("/warehouses", warehouses);
 //absences
@@ -48,6 +52,8 @@ app.use("/absences", absences);
 app.use("/holidays", holidays);
 //resturants
 app.use("/resturants", resturants);
+//orders2
+app.use("/orders2", orders2);
 //orders3
-//no order 2 , as order 1 and order 2 routes in same file
+//no order 2 route file , as order 1 and order 2 routes in same file
 app.use("/orders3", orders3);
